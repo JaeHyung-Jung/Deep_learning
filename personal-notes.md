@@ -175,8 +175,7 @@ A function that has the condition that all values ​​in the output node fall 
 - 질문#2 : cross-entropy 직관적 설명\n
 ==> 직접 scalar 넣어보면서 이해함
 
-- 질문#3 : plt plot할때 3차원(x, y, 1)이아니라 1의값이 n이어도 출력되는가?\n
-==> plt.plot [w,h,c]형태면 가능. 강의에서 (x,y,1)형태로 한 이유는 rgb channel없이 height, wight만 추출하기위해
+- 질문#3 : plt plot할때 3차원(x, y, 1)이아니라 1의값이 n이어도 출력되는가?  ==> plt.plot [w,h,c]형태면 가능. 강의에서 (x,y,1)형태로 한 이유는 rgb channel없이 height, wight만 추출하기위해
 
 - 질문#4 : kaggle competition(cactucs)에서 datasets를 train으로 저장할때 train.zip 확장자명 그대로 사용할 수 없는가? \n
 ==> datasets를 local로저장하여 알집풀어서 local로 수행함

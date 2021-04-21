@@ -168,7 +168,17 @@ A function that has the condition that all values ​​in the output node fall 
 ##   ‌
 
 
+## '04.21.(수) question summarizations
+- 질문 #1 np.shape할때 왜 차원이 중첩해서 늘어나지않고 초기화되냐 ? 
+==> x == np.exand()형태로 variable에 저장해주지 않아서 그렇다
 
+- 질문#2 cross-entropy 직관적 설명
+==> 직접 scalar 넣어보면서 이해함
+
+- 질문#3 plt plot할때 3차원(x, y, 1)이아니라 1의값이 n이어도 출력되는가?
+==> plt.plot [w,h,c]형태면 가능
+
+- 질문#4 
 
 
 

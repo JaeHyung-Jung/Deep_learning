@@ -210,7 +210,7 @@ Convolution net :
 
 - 질문#8 : Batch Normalization는 데이터의 분포를 정규분포화 시켜 학습에 용이하기 위함을 알았다. 그런데 ReLU를 통과한 데이터의 분포가 왜 0보다 작은값도 분포로 그대로 나오는가에 대해서 질문?   ==> ReLU를 통과한 데이터들의 분포를 나타낸것임. 즉 분포자체를 ReLU통과시킨게 아니라 ReLU로 통과시킨 data들을 분포화한것
 
-- 질문#9 :     
+- 질문#9 : dense()는 직전의 flatten()의 값보다 작거나 커도된다.    
 
 - 질문#10 :  
    
@@ -224,7 +224,41 @@ Convolution net :
    
 
 
+!! Model.summary()에서 Param의 값은 (필터 크기) x (#입력 채널(RGB)) x (#출력 채널) + (출력 채널 bias)
 
+# 질문할것들
+1) param값 구하는건 채널크기 x filter의 크기 + b(채널) 인것은 알겠으나 그 다음 layer의 param구할때 왜 그전 bias는 뺴주는가. 
+2) 만약 Dense로 flatten()값보다 크게해주면 어떤식으로 늘어나는건가. maxpooling처럼 축소하는건 영역을 일정하게 나눠서 최대값이나 최소값을 추출해주는등으로 축소하는 방식을 알겠는데 dense(x), flatten() = y 일때 x>y면 x가 y의 정수배로 나누어 떨어지지 않으면 어떤식으로 추가되는건가.
+3) model.summary()에서 각 layer의 param는 필터크기와 입출력채널의 크기로 결정된다. 그렇다면 입력이나 출력데이터의 H, W는 관여하지않는데 왜그런가?
+
+
+`21. 4. 20~ 주말 숙제
+![image](https://user-images.githubusercontent.com/79160507/115550458-d8e40f00-a2e4-11eb-9061-52942e461246.png)
+
+output shape : 
+Convd2d = (None, 28, 28, 16)
+Convd2d1 = (None, 28, 28, 16)
+maxpooling2d = (None, 14, 14, 16)
+Conv2d_2 = (None, 14, 14, 32)
+Conv2d_3 = (None, 14, 14, 32)
+maxpooling2d_1 = (None, 7, 7, 32)
+Conv2d_4 = (None, 7, 7, 64)
+Conv2d_5 = (None, 7, 7, 64)
+flatten = (None, 7*7*64)
+dense = (None, 128)
+dense_1 = (None, 10)
+
+Params :
+# filter size 3x3 = 9 는 이 모델에서는 고정값
+(필터크기 x 입력채널크기 x 출력채널크기 + 출력채널수 (==출력채널의 b 총갯수))
+(9 x 16 + 16) = 160
+(9 x 16 x 16 + 16) = 2320
+(9 x 16 x 32 + 32) = 4640
+(9 x 32 x 32 + 32) = 9248
+(9 x 32 x 64 + 64) = 18496
+(9 x 64 x 64 + 64) = 36928
+(1 x (3136(=7*7*64)) x 128 + 128) = 401536
+(1 x 128 x 10 + 10) = 1290
 
 
 

@@ -152,11 +152,36 @@ A function that has the condition that all values ​​in the output node fall 
 #### Binary Entropy :
 
 
+### 강의내용 정리 :
+Batcg Normalization에서 Normalization은 FCL->RElU를 거친 학습데이터의 분포가 일정치않은것을 일정하게 만들어주어 학습률을 쉽게 결정하게 해준다.   Normalization연산에는 Scaling계수(r)과 Bias가 필요하고 값을 학습시킬수 있다.
+
+Convolution net :
+- 종류 : LeNet, AlexNet(2012), VGG(2014), GoogleNet(2014)
+- 
+
+!!!(중요) : Google Net 
+- inception.v1 : 1x1, 3x3, 5x5 convolution등의 여러 convolution연산과 pooling(1개)의 연산을 병력적으로 연산시켜 병목현상을 통해 학습시킴, BottleNeck을 통해 연산량
+이러한 병목현상중에 중간과정에서도 분류기를 두어 Classification이 가능함(Gradient Vanishing 방지)
 
 
+!!!!!!!!!!!!!!!(존나중요) ResNet(Residual Network) '2015 
+- 계층 152까지 높이며 error 혁신적으로 줄임. ResNet을 통해 Human Performance 보다 띄어넘음
+#### Skip-Connection이 주요한 역할을함 
+    - 일반적인 구조 : conv layer -> relu 반복 
+    - residual 구조 : conv layer -> relu -> x(입력의 identity) 더해줌 ==> 쉽게말해 feature 추출전부분을 추출후에 더한다.
+        - pre-Activation : wegiht를 후에두어 [BN->ReLU->weight] 순으로 하는방식 (: Gradient-Highway가 가능하게)
 
-
-
+#### Dense Net(Res Net을 계승함) 
+![image](https://user-images.githubusercontent.com/79160507/115515022-aaa00880-a2bf-11eb-8929-2bd5a1cb8eab.png)
+  - 전체적 구조 : 각 Block끼리 모두 서로 연결된 형태
+  - ResNet의 연장선이며 Dense Block이 필요하다. Dense Block내부는 Pre-Activation 구조이다.
+  - 이전 feature map에 concatenate(계속해서 이어붙여 연장)해줌 이와같은 방식은 구조적으로 Skip-Connection과 같다. 계속해서 concetanate되기때문에 첫번째 layer가 이후에도 connection되기때문에
+ 
+ 
+ Net별 특성 정리
+ - VGG : CONV2D -> pooling을 반복적으로 해주며 flatten해줌 (최종적으로 1x1xN(무수히 큼) 형태로, 스칼라가 channel이 굉장히 긴 형태)
+ - ResNet : 
+ - DenseNet :
 
 
 
@@ -183,7 +208,7 @@ A function that has the condition that all values ​​in the output node fall 
 
 - 질문#7 : forward, backward(backprogation)에서의 수식적 개념이해와 미분방식등의 직접적인 이해가 필요한가?   ==> 어떤식으로 작동하는지 이해하되 수식과같이 직접 loss function, convolution net등을 짜볼필요까진없다 Frame Work가 있기때문에
 
-- 질문#8 :     
+- 질문#8 : Batch Normalization는 데이터의 분포를 정규분포화 시켜 학습에 용이하기 위함을 알았다. 그런데 ReLU를 통과한 데이터의 분포가 왜 0보다 작은값도 분포로 그대로 나오는가에 대해서 질문?   ==> ReLU를 통과한 데이터들의 분포를 나타낸것임. 즉 분포자체를 ReLU통과시킨게 아니라 ReLU로 통과시킨 data들을 분포화한것
 
 - 질문#9 :     
 

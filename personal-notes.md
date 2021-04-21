@@ -164,7 +164,7 @@ Convolution net :
 이러한 병목현상중에 중간과정에서도 분류기를 두어 Classification이 가능함(Gradient Vanishing 방지)
 
 
-!!!!!!!!!!!!!!!(존나중요) ResNet(Residual Network) '2015 
+!!!!!!!!!!!!!!!(매우중요) ResNet(Residual Network) '2015 
 - 계층 152까지 높이며 error 혁신적으로 줄임. ResNet을 통해 Human Performance 보다 띄어넘음
 #### Skip-Connection이 주요한 역할을함 
     - 일반적인 구조 : conv layer -> relu 반복 

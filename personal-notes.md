@@ -169,16 +169,40 @@ A function that has the condition that all values ​​in the output node fall 
 
 
 ## '04.21.(수) question summarizations
-- 질문 #1 np.shape할때 왜 차원이 중첩해서 늘어나지않고 초기화되냐 ? 
+- 질문 #1 : np.shape할때 왜 차원이 중첩해서 늘어나지않고 초기화되냐 ? \n
 ==> x == np.exand()형태로 variable에 저장해주지 않아서 그렇다
 
-- 질문#2 cross-entropy 직관적 설명
+- 질문#2 : cross-entropy 직관적 설명\n
 ==> 직접 scalar 넣어보면서 이해함
 
-- 질문#3 plt plot할때 3차원(x, y, 1)이아니라 1의값이 n이어도 출력되는가?
-==> plt.plot [w,h,c]형태면 가능
+- 질문#3 : plt plot할때 3차원(x, y, 1)이아니라 1의값이 n이어도 출력되는가?\n
+==> plt.plot [w,h,c]형태면 가능. 강의에서 (x,y,1)형태로 한 이유는 rgb channel없이 height, wight만 추출하기위해
 
-- 질문#4 
+- 질문#4 : kaggle competition(cactucs)에서 datasets를 train으로 저장할때 train.zip 확장자명 그대로 사용할 수 없는가? \n
+==> datasets를 local로저장하여 알집풀어서 local로 수행함
+
+- 질문#5 : dropout(x)에서 x의 수치적용방식 질문 (x만큼 dropout되는지 x만큼 연산을 하는건지(==(1-x)만큼 dropout))\n
+==> x만큼 dropout됨. 즉 dropout(1)하면 오류발생
+
+- 질문#6 : train set을 학습시킨후 evaluate로 출력한 정확도와 model.fit(test sets, epochs=1)했을때 정확도의차이가 생기는 이유?\n
+==> model.fit(test, epoch=1)했을때 정확도가 evaluate보다 조금더 올라갈 것이라 생각하였으나 학습과정에서 무조건 accuracy가 올라가는것이 아님(대체적으로 epoch가 늘어날수록 accuracy가 상승하는건 맞음)
+
+- 질문#7 : forward, backward(backprogation)에서의 수식적 개념이해와 미분방식등의 직접적인 이해가 필요한가? \n
+==> 어떤식으로 작동하는지 이해하되 수식과같이 직접 loss function, convolution net등을 짜볼필요까진없다 Frame Work가 있기때문에
+
+- 질문#8 :  \n
+
+- 질문#9 :  \n
+
+- 질문#10 :  \n
+
+- 질문#11 :  \n
+
+- 질문#12 :  \n
+
+- 질문#13 :  \n
+
+- 질문#14 :  \n
 
 
 

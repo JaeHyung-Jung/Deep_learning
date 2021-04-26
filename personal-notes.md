@@ -187,13 +187,44 @@ Convolution net :
 RNN : 주로 자연어처리에 쓰이는 net이다. (다중입력 -> 단일출력 / 단일입력 -> 다중출력 / 다중입력 -> 다중출력 등이 있다)
   - 순차데이터(Sequential data) : 순서가 의미가 있으며 순서가 달라질 경우 의미가 손상되는 데이터
 
+Regularization :
+일반적으로 train 에서는 loss값이감소하지 않지만 test, validation에서 loss값이 감소하도록 정규화 해주는 과정
+
+- Weight Decay : Weight L-2 Norm을 최소화 하는 정규화 기법. ==> Weight Decay를 통해 weight가 너무 복잡하여 overfitting되는 것을 막는다.
+- 정규화는 영상처리 알고리즘에 적용하기 좋다
+
+Batch Normalization : 데이터 분포를 정규화
+- BN은 학습 할동안은 연산량을 올리지만 test할때에는 영향을 주지않는다.
+
+# CNN의 발전 :
+
+1) Vanilla CNN : Conv2D -> Relu
+2) ResNet : (BN -> ReLU -> Conv )반복 -> layer + identity
+3) DenseNet : BN -> Relu -> Conv 모든 layer들이연결
+
+Self-Normalization neural network 
+- SELU 함수 : ReLu는 음수값을 0으로하지만 SELU는 음수값을 Exponential하게활성화한다. ( 0이하는 지수함수꼴로 -2로 수렴, 0이상은 x=y로 출력)
+- alpha-dropout : Relu에 Drop-out이 적용되는것처럼 SeLU에 적합한 Drop-out방식 
+- ==> SNN의 결과 : 세심한 수학적 연구(selu, alpha-dropout등을 수많은 실험을 통해 나온 계수를 통하여 개념적, 직관적 효율적인 layer의 구조보다 훨씬 더 성능좋은 net을 만들 수 있다)
+
+Imbalanced Data :
+Classify할 때 class의 양이 확실히다를때 Imbalanced Data라 하고 이런 data는 여러 방법으로 classify 할 수 있다.
+1) random under sampling : minority, majority class중에서 majority class에서 minotity class의 수만큼 임의로 data를뽑아 비율을 맞춰주는 방법
+2) random over sampling : minority class의 데이터를 반복적으로 두어 majority class의 비율과 맞춰주는 방법. (minority class의 가중치를 증가시키는 것과 유사)
+3) SMOTE(synthetic minority oversampling technique) : minority class를 combination하고 linear combination을 추가
+--> 3-1) Borderline-SMOTE : 경계에 있는 샘플만 오버샘플링하여 smote하는 효과적인 방법
 
 
-## 
+## 데이터 증강 (이미지의 변형, 회전등)
+- invariance : 불변성 (회전하고 scale하면 invarian하다. 그러나 평행이동하고 회전하면 variant함)
+  - CNN은 Affine Transform(2차원 변환)에 대해 Variant하다. 즉, affine transform된 영상을 다른 영상으로 인식
+- Noise 삽입 : 다양한 방법(gaussian, jpeg)등으로 augmentation 할수있다.
 
-## 
-
-##   ‌
+정규화 :
+- L-2 Normalization(==Ridge)  : 아주 큰 가중치에 패널티부여(-> 가중치를 비교적 평평하게 해줌)
+  => L-2에서의 람다값 : 람다값이 높을수록 정규분포에가깝다.
+- MSE Loss : 평균을 나타내는 특성이있다.
+- MAE Loss : 오차가 큰 에러값을 무시하는 특성을가지고 outlier에 크게 영향을 받지않는다. 
 
 
 ## '04.21.(수) question summarizations

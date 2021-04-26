@@ -207,7 +207,7 @@ Self-Normalization neural network
 - alpha-dropout : Relu에 Drop-out이 적용되는것처럼 SeLU에 적합한 Drop-out방식 
 - ==> SNN의 결과 : 세심한 수학적 연구(selu, alpha-dropout등을 수많은 실험을 통해 나온 계수를 통하여 개념적, 직관적 효율적인 layer의 구조보다 훨씬 더 성능좋은 net을 만들 수 있다)
 
-Imbalanced Data :
+Imbalanced Data(데이터가 너무작거나 특정 class의 data가 다른 class의 data에비해 훨씬 많은경우) :
 Classify할 때 class의 양이 확실히다를때 Imbalanced Data라 하고 이런 data는 여러 방법으로 classify 할 수 있다.
 1) random under sampling : minority, majority class중에서 majority class에서 minotity class의 수만큼 임의로 data를뽑아 비율을 맞춰주는 방법
 2) random over sampling : minority class의 데이터를 반복적으로 두어 majority class의 비율과 맞춰주는 방법. (minority class의 가중치를 증가시키는 것과 유사)
@@ -224,7 +224,16 @@ Classify할 때 class의 양이 확실히다를때 Imbalanced Data라 하고 이
 - L-2 Normalization(==Ridge)  : 아주 큰 가중치에 패널티부여(-> 가중치를 비교적 평평하게 해줌)
   => L-2에서의 람다값 : 람다값이 높을수록 정규분포에가깝다.
 - MSE Loss : 평균을 나타내는 특성이있다.
-- MAE Loss : 오차가 큰 에러값을 무시하는 특성을가지고 outlier에 크게 영향을 받지않는다. 
+- MAE Loss : 오차가 큰 에러값을 무시하는 특성을가지고 outlier에 크게 영향을 받지않는다.
+
+* 과소적합 데이터 해결 :
+- prefetch(GPU에 미리 데이터를 올려줌으로써 학습 속도 향상)
+
+
+## 부족한 데이터셋 문제해결(가장 현실적인 문제해결, 매우 중요하다고생각) :
+- Bordeline SMOTE 사용 (Bordeline SMOTE를 통해 dataset을 rescaling하여 학습시키면 학습률이 증가)
+
+
 
 
 ## '04.21.(수) question summarizations
@@ -246,7 +255,9 @@ Classify할 때 class의 양이 확실히다를때 Imbalanced Data라 하고 이
 
 - 질문#9 : dense()는 직전의 flatten()의 값보다 작거나 커도된다.    
 
-- 질문#10 :  
+- 질문#10 :  ![image](https://user-images.githubusercontent.com/79160507/116063361-d9532000-a6bf-11eb-8d66-9257869d5ccf.png)
+Dense(32) -> BN -> BN -> Dense(32) 하면 Concetanation 돼서 -> BN 64된다는데 Dense(32)가아니라 (32+32 = 64) concetanation되는과정 아예모르겠음 왜저렇게되는지 
+BN은 W(Z)+B / Z= WX +B --> W(Z) = W(WX+B) + B인데 
    
 - 질문#11 :     
    

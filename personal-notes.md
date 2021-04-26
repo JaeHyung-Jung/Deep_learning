@@ -233,6 +233,17 @@ Classify할 때 class의 양이 확실히다를때 Imbalanced Data라 하고 이
 ## 부족한 데이터셋 문제해결(가장 현실적인 문제해결, 매우 중요하다고생각) :
 - Bordeline SMOTE 사용 (Bordeline SMOTE를 통해 dataset을 rescaling하여 학습시키면 학습률이 증가)
 
+# 6강 
+- Deep_learning -> supervised, unsupervised, reinforcement learning 
+  - supervised learning : regression, classification
+  - unsupervised learning : clustering
+  - reinforcement learning :
+   
+### image classification : 
+  - 전처리 : 일반적인 영상처리에서 data의 특징을 featuring하는 과정 (딥러닝에서는 사용하지않음)
+  - End to End : 전처리없이(feature engineering) 데이터만 넣으면 알아서 학습하여 input->output을 생성해내는 과정
+
+![image](https://user-images.githubusercontent.com/79160507/116070703-e7a53a00-a6c7-11eb-90a6-95a53888e111.png)
 
 
 

@@ -29,25 +29,6 @@ import numpy as np
 import matplotlib.pylplot as plt  
   
 import tensorflow as tf  
-  
-‌  
-Feature Extraction\(특징추출\)   
-‌  
-filters : layer에서 나갈 때 몇 개의 filter를 만들것인지  
-  
-‌  
-kernel\_size : filter의 Weight의 사이즈  
-  
-‌  
-strides : 몇개의 pixel을 skip하면서 지나갈 것인지\(사이즈에 영향을 줌\)  
-  
-‌  
-padding : zero padding을 만들것인지, VALID는 Padding이 없고, SAME은 Padding이 있음  
-  
-‌  
-activation : Activation Function을 만들것인지
-
-
 
 ## Optimizing 
 
@@ -62,53 +43,7 @@ import numpy as np
 import matplotlib.pylplot as plt  
   
 import tensorflow as tf  
-  
-‌  
-Feature Extraction\(특징추출\)   
-‌  
-filters : layer에서 나갈 때 몇 개의 filter를 만들것인지  
-  
-‌  
-kernel\_size : filter의 Weight의 사이즈  
-  
-‌  
-strides : 몇개의 pixel을 skip하면서 지나갈 것인지\(사이즈에 영향을 줌\)  
-  
-‌  
-padding : zero padding을 만들것인지, VALID는 Padding이 없고, SAME은 Padding이 있음  
-  
-‌  
-activation : Activation Function을 만들것인‌  
-MNIST등의 데이터 불러올때 첫 명령어  
-  
-‌  
-import numpy as np  
-  
-import matplotlib.pylplot as plt  
-  
-import tensorflow as tf  
-  
-‌  
-Feature Extraction\(특징추출\)   
-‌  
-filters : layer에서 나갈 때 몇 개의 filter를 만들것인지  
-  
-‌  
-kernel\_size : filter의 Weight의 사이즈  
-  
-‌  
-strides : 몇개의 pixel을 skip하면서 지나갈 것인지\(사이즈에 영향을 줌\)  
-  
-‌  
-padding : zero padding을 만들것인지, VALID는 Padding이 없고, SAME은 Padding이 있음  
-  
-‌  
-activation : Activation Function을 만들것인지  
-  
-​  
-  
-
-
+ 
 
 
 ## Training
@@ -317,10 +252,10 @@ Params :
 (1 x 128 x 10 + 10) = 1290
 
 ##### For the test
-- ResNet : 
-- Filter를 통해 Featuring 하는 과정 :
-- Classification Up to 99% percent, practice
-- Inception(GoogleNet -> Inception module, inception v1,2,3) : 
+* ResNet : 
+* Filter를 통해 Featuring 하는 과정 :
+* Classification Up to 99% percent, practice
+* Inception(GoogleNet -> Inception module, inception v1,2,3) : 
 
 
 

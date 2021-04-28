@@ -104,8 +104,7 @@ Convolution net :
 #### Skip-Connection이 주요한 역할을함 
     - 일반적인 구조 : conv layer -> relu 반복 
     - residual 구조 : conv layer -> relu -> x(입력의 identity) 더해줌 ==> 쉽게말해 feature 추출전부분을 추출후에 더한다.
-        - pre-Activation : wegiht를 후에두어 [BN->ReLU->weight] 순으로 하는방식 (: Gradient-Highway가 가능하게)
-
+    - 
 #### Dense Net(Res Net을 계승함) 
 ![image](https://user-images.githubusercontent.com/79160507/115515022-aaa00880-a2bf-11eb-8929-2bd5a1cb8eab.png)
   - 전체적 구조 : 각 Block끼리 모두 서로 연결된 형태

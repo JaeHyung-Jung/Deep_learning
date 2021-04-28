@@ -316,6 +316,11 @@ Params :
 (1 x (3136(=7*7*64)) x 128 + 128) = 401536
 (1 x 128 x 10 + 10) = 1290
 
+##### For the test
+- ResNet : 
+- Filter를 통해 Featuring 하는 과정 :
+- Classification Up to 99% percent, practice
+- Inception(GoogleNet -> Inception module, inception v1,2,3) : 
 
 
 

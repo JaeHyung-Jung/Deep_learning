@@ -363,8 +363,20 @@ Additionally, we used sparse-categorical cross-entropy in tutorial.
 It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.
 
 
+## Fashion MNIST Classifciation \(Third Week\)
 
+Last week\(4. 17 ~ 5. 17\), We have classified the basic MNIST(quickstart for beginners : MNIST).
 
+This week, let's classify the datasets of fashion_MNIST
+It's funny and interesting
+
+Firstable, go to link(https://www.tensorflow.org/tutorials/keras/classification?hl=ko)
+
+In the guide of link, it uses Fully-connected-layer to classify.
+
+It also uses matplot library to visualize some processing of classifying
+
+We can visualize by making graphs of datas or accuracy with matplot library.
 
 
 

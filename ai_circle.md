@@ -368,7 +368,7 @@ Last week\(4. 17 ~ 5. 17\), We have classified the basic MNIST(quickstart for be
 This week, let's classify the datasets of fashion_MNIST   
 It's funny and interesting   
    
-Firstable, go to link(https://www.tensorflow.org/tutorials/keras/classification?hl=ko)   
+Firstable, go to link(https://www.tensorflow.org/tutorials/keras/classification)
 In the guide of link, it uses Fully-connected-layer to classify.   
 It also uses matplot library to visualize some processing of classifying   
 We can visualize by making graphs of datas or accuracy with matplot library. <br>  

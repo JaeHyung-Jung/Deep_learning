@@ -360,7 +360,8 @@ It is used when the label is provided in one-hot format such as \[0,0,1,0,0\], \
 
 Additionally, we used sparse-categorical cross-entropy in tutorial.
 
-It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.<br>
+It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.
+#
 ## Fashion MNIST Classifciation \(Third Week\)
 
 Last week\(4. 17 ~ 5. 17\), We have classified the basic MNIST(quickstart for beginners : MNIST).
@@ -568,27 +569,27 @@ for i in range(num_images):
 plt.tight_layout()
 plt.show()
 ```
-<br>
+#
 Finally, use the trained model to make a prediction about a single image.
 ```Python
 # Grab an image from the test dataset.
 img = test_images[1]
 print(img.shape)
 ```
-<br>
+#
 Copy and Paste below code.
 ```Python
 # Add the image to a batch where it's the only member.
 img = (np.expand_dims(img,0))
 print(img.shape)
 ```
-<br>
+#
 Now predict the correct label for this image:
 ```Python
 predictions_single = probability_model.predict(img)
 print(predictions_single)
 ```
-<br>
+#
 Copy and Paste below code.
 ```Python
 plot_value_array(1, predictions_single[0], test_labels)
@@ -598,6 +599,6 @@ tf.keras.Model.predict returns a list of lists—one list for each image in the 
 ```Python
 np.argmax(predictions_single[0])
 ```
-<br>
+#
 Well done, tutorials of FashionMNIST is finished.   
 You can raise up the accuracy by editing the model.

@@ -360,9 +360,7 @@ It is used when the label is provided in one-hot format such as \[0,0,1,0,0\], \
 
 Additionally, we used sparse-categorical cross-entropy in tutorial.
 
-It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.
-
-
+It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.                                                     
 ## Fashion MNIST Classifciation \(Third Week\)
 
 Last week\(4. 17 ~ 5. 17\), We have classified the basic MNIST(quickstart for beginners : MNIST).

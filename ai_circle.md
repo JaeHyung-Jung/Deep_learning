@@ -390,7 +390,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 print(tf.__version__)
-```
+```   
    
 Load and save fashionMNIST datasets as an variable '(train_images, train_labels), (test_images, test_labels)' 
 ```Python

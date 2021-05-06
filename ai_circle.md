@@ -366,28 +366,22 @@ It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.
 ## Fashion MNIST Classifciation \(Third Week\)
 
 Last week\(4. 17 ~ 5. 17\), We have classified the basic MNIST(quickstart for beginners : MNIST).
-
 This week, let's classify the datasets of fashion_MNIST
-
-It's funny and interesting
-
-Firstable, go to link(https://www.tensorflow.org/tutorials/keras/classification?hl=ko)
-
-In the guide of link, it uses Fully-connected-layer to classify.
-
-It also uses matplot library to visualize some processing of classifying
-
-We can visualize by making graphs of datas or accuracy with matplot library.
-
-
-
+It's funny and interesting   
+   
+Firstable, go to link(https://www.tensorflow.org/tutorials/keras/classification?hl=ko)   
+In the guide of link, it uses Fully-connected-layer to classify.   
+It also uses matplot library to visualize some processing of classifying   
+We can visualize by making graphs of datas or accuracy with matplot library.   
+   
 So, What is FashionMNIST? :
-- FashionMNIST is a dataset which contains 70,000 grayscale images in 10 categories
+FashionMNIST is a dataset which contains 70,000 grayscale images in 10 categorie
 
+## SourceCode
 Copy and paste below codes of FashionMNIST
 
-
-```Text
+We need Tensorflow, keras, numpy and matplotlib so import them by pasting below codes.   
+```Python
 # TensorFlow and tf.keras
 import tensorflow as tf
 
@@ -398,29 +392,33 @@ import matplotlib.pyplot as plt
 print(tf.__version__)
 ```
 
-
-```Text
+Load and save fashionMNIST datasets as an variable '(train_images, train_labels), (test_images, test_labels)' 
+```Python
 fashion_mnist = tf.keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 ```
 
-```Text
+Below classes is an label of datasets. We classify many datas to this labels.
+```Python
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```     
 
-```Text               
+Confirm the (shape, length) of images of train datasets, print the shape of labels of train sets
+```Python               
 train_images.shape
 len(train_labels)
 train_labels
 ```
 
-```Text
+Confirm the shape of images of train datasets, print the length of labels of train sets
+```Python
 test_images.shape
 len(test_labels)
 ```
 
-```Text
+Visualizing
+```Python
 plt.figure()
 plt.imshow(train_images[0])
 plt.colorbar()
@@ -428,12 +426,13 @@ plt.grid(False)
 plt.show()
 ```
 
-```Text
+Preprocessing : Scale the value(channels) of dataset to a range of 0 to 1 by diving it into 255.
+```Python
 train_images = train_images / 255.0
 test_images = test_images / 255.0
 ```
 
-```Text
+```Python
 plt.figure(figsize=(10,10))
 for i in range(25):
     plt.subplot(5,5,i+1)
@@ -445,7 +444,7 @@ for i in range(25):
 plt.show()
 ```
 
-```Text
+```Python
 model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),
     tf.keras.layers.Dense(128, activation='relu'),
@@ -453,41 +452,41 @@ model = tf.keras.Sequential([
 ])
 ```
 
-```Text
+```Python
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 ```      
 
-```Text
+```Python
 model.fit(train_images, train_labels, epochs=10)
 ```
 
-```Text
+```Python
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 print('\nTest accuracy:', test_acc)
 ```
 
-```Text
+```Python
 probability_model = tf.keras.Sequential([model,tf.keras.layers.Softmax()])
 ```                                         
                                          
-```Text                                         
+```Python                                         
 predictions[0]
 ```
 
 
-```Text
+```Python
 np.argmax(predictions[0])
 ```
 
 
-```Text
+```Python
 test_labels[0]
 ```
 
 
-```Text
+```Python
 def plot_image(i, predictions_array, true_label, img):
   true_label, img = true_label[i], img[i]
   plt.grid(False)
@@ -506,9 +505,7 @@ def plot_image(i, predictions_array, true_label, img):
                                 100*np.max(predictions_array),
                                 class_names[true_label]),
                                 color=color)
-```
-
-```Text
+                                
 def plot_value_array(i, predictions_array, true_label):
   true_label = true_label[i]
   plt.grid(False)
@@ -522,7 +519,7 @@ def plot_value_array(i, predictions_array, true_label):
   thisplot[true_label].set_color('blue')
 ```
 
-```Text  
+```Python  
 i = 0
 plt.figure(figsize=(6,3))
 plt.subplot(1,2,1)
@@ -533,7 +530,7 @@ plt.show()
 ```
 
 
-```Text
+```Python
 i = 12
 plt.figure(figsize=(6,3))
 plt.subplot(1,2,1)
@@ -544,7 +541,7 @@ plt.show()
 ```
 
 
-```Text
+```Python
 # Plot the first X test images, their predicted labels, and the true labels.
 # Color correct predictions in blue and incorrect predictions in red.
 num_rows = 5
@@ -561,31 +558,31 @@ plt.show()
 ```
 
 
-```Text
+```Python
 # Grab an image from the test dataset.
 img = test_images[1]
 print(img.shape)
 ```
 
 
-```Text
+```Python
 # Add the image to a batch where it's the only member.
 img = (np.expand_dims(img,0))
 print(img.shape)
 ```
 
 
-```Text
+```Python
 predictions_single = probability_model.predict(img)
 print(predictions_single)
 ```
 
 
-```Text
+```Python
 plot_value_array(1, predictions_single[0], test_labels)
 _ = plt.xticks(range(10), class_names, rotation=45)
 ```
 
-```Text
+```Python
 np.argmax(predictions_single[0])
 ```

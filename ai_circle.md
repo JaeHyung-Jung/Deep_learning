@@ -360,7 +360,7 @@ It is used when the label is provided in one-hot format such as \[0,0,1,0,0\], \
 
 Additionally, we used sparse-categorical cross-entropy in tutorial.
 
-It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.   
+It is used when labels come in the form of integers, such as 0, 1, 2, 3, 4.<br>
 ## Fashion MNIST Classifciation \(Third Week\)
 
 Last week\(4. 17 ~ 5. 17\), We have classified the basic MNIST(quickstart for beginners : MNIST).
@@ -370,14 +370,14 @@ It's funny and interesting
 Firstable, go to link(https://www.tensorflow.org/tutorials/keras/classification?hl=ko)   
 In the guide of link, it uses Fully-connected-layer to classify.   
 It also uses matplot library to visualize some processing of classifying   
-We can visualize by making graphs of datas or accuracy with matplot library.   
-   
+We can visualize by making graphs of datas or accuracy with matplot library. <br>  
+  
 So, What is FashionMNIST? :
 FashionMNIST is a dataset which contains 70,000 grayscale images in 10 categorie
-
+<br>
 ## SourceCode
 Copy and paste below codes of FashionMNIST
-
+<br>
 We need Tensorflow, keras, numpy and matplotlib so import them by pasting below codes.   
 ```Python
 # TensorFlow and tf.keras
@@ -389,32 +389,32 @@ import matplotlib.pyplot as plt
 
 print(tf.__version__)
 ```   
-   
+<br>   
 Load and save fashionMNIST datasets as an variable '(train_images, train_labels), (test_images, test_labels)' 
 ```Python
 fashion_mnist = tf.keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 ```
-   
+<br>   
 Below classes is an label of datasets. We classify many datas to this labels.
 ```Python
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```     
-   
+<br>   
 Confirm the (shape, length) of images of train datasets, print the shape of labels of train sets
 ```Python               
 train_images.shape
 len(train_labels)
 train_labels
 ```
-
+<br>
 Confirm the shape of images of train datasets, print the length of labels of train sets
 ```Python
 test_images.shape
 len(test_labels)
 ```
-
+<br>
 Visualizing
 ```Python
 plt.figure()
@@ -423,12 +423,13 @@ plt.colorbar()
 plt.grid(False)
 plt.show()
 ```
-
+<br>
 Preprocessing : Scale the value(channels) of dataset to a range of 0 to 1 by diving it into 255.
 ```Python
 train_images = train_images / 255.0
 test_images = test_images / 255.0
 ```
+<br>
 To verify that the data is in the correct format and that you're ready to build and train the network, let's display the first 25 images from the training set and display the class name below each image.
 ```Python
 plt.figure(figsize=(10,10))
@@ -441,6 +442,7 @@ for i in range(25):
     plt.xlabel(class_names[train_labels[i]])
 plt.show()
 ```
+<br>
 Set up the layers. The model uses Fully connected layer. 
 ```Python
 model = tf.keras.Sequential([
@@ -449,6 +451,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(10)
 ])
 ```
+<br>
 Before the model is ready for training, it needs a few more settings. These are added during the model's compile step:
 
 Loss function —This measures how accurate the model is during training. You want to minimize this function to "steer" the model in the right direction.
@@ -459,35 +462,39 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 ```      
+<br>
 To start training, call the model.fit method—so called because it "fits" the model to the training data:
 ```Python
 model.fit(train_images, train_labels, epochs=10)
 ```
+<br>
 Next, compare how the model performs on the test dataset:
 ```Python
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 print('\nTest accuracy:', test_acc)
 ```
+<br>
 With the model trained, you can use it to make predictions about some images.
 ```Python
 probability_model = tf.keras.Sequential([model,tf.keras.layers.Softmax()])
 predictions = probability_model.predict(test_images)
 ```                                         
+<br>
 Let's take a look at the first prediction:                                         
 ```Python                                         
 predictions[0]
 ```
-
+<br>
 A prediction is an array of 10 numbers.
 ```Python
 np.argmax(predictions[0])
 ```
-
+<br>
 If you paste the below code, you can see the ouput(9). It means that the model predicts data to be class_number(9) which is an ankle boot class.
 ```Python
 test_labels[0]
 ```
-
+<br>
 Graph this to look at the full set of 10 class predictions.
 ```Python
 def plot_image(i, predictions_array, true_label, img):
@@ -521,8 +528,8 @@ def plot_value_array(i, predictions_array, true_label):
   thisplot[predicted_label].set_color('red')
   thisplot[true_label].set_color('blue')
 ```
-With the model trained, you can use it to make predictions about some images.
-
+<br>
+With the model trained, you can use it to make predictions about some images.<br>
 Let's look at the 0th image, predictions, and prediction array. Correct prediction labels are blue and incorrect prediction labels are red. The number gives the percentage (out of 100) for the predicted label.
 ```Python  
 i = 0
@@ -533,7 +540,7 @@ plt.subplot(1,2,2)
 plot_value_array(i, predictions[i],  test_labels)
 plt.show()
 ```
-
+<br>
 Copy and Paste below code.
 ```Python
 i = 12
@@ -544,7 +551,7 @@ plt.subplot(1,2,2)
 plot_value_array(i, predictions[i],  test_labels)
 plt.show()
 ```
-
+<br>
 Let's plot several images with their predictions. Note that the model can be wrong even when very confident.
 ```Python
 # Plot the first X test images, their predicted labels, and the true labels.
@@ -561,27 +568,27 @@ for i in range(num_images):
 plt.tight_layout()
 plt.show()
 ```
-
+<br>
 Finally, use the trained model to make a prediction about a single image.
 ```Python
 # Grab an image from the test dataset.
 img = test_images[1]
 print(img.shape)
 ```
-
+<br>
 Copy and Paste below code.
 ```Python
 # Add the image to a batch where it's the only member.
 img = (np.expand_dims(img,0))
 print(img.shape)
 ```
-
+<br>
 Now predict the correct label for this image:
 ```Python
 predictions_single = probability_model.predict(img)
 print(predictions_single)
 ```
-
+<br>
 Copy and Paste below code.
 ```Python
 plot_value_array(1, predictions_single[0], test_labels)
@@ -591,6 +598,6 @@ tf.keras.Model.predict returns a list of lists—one list for each image in the 
 ```Python
 np.argmax(predictions_single[0])
 ```
-   
+<br>
 Well done, tutorials of FashionMNIST is finished.   
 You can raise up the accuracy by editing the model.

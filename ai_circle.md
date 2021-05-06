@@ -490,8 +490,9 @@ A prediction is an array of 10 numbers.
 ```Python
 np.argmax(predictions[0])
 ```
-<br>
+   
 If you paste the below code, you can see the ouput(9). It means that the model predicts data to be class_number(9) which is an ankle boot class.
+
 ```Python
 test_labels[0]
 ```

@@ -391,19 +391,19 @@ import matplotlib.pyplot as plt
 
 print(tf.__version__)
 ```
-
+   
 Load and save fashionMNIST datasets as an variable '(train_images, train_labels), (test_images, test_labels)' 
 ```Python
 fashion_mnist = tf.keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 ```
-
+   
 Below classes is an label of datasets. We classify many datas to this labels.
 ```Python
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```     
-
+   
 Confirm the (shape, length) of images of train datasets, print the shape of labels of train sets
 ```Python               
 train_images.shape

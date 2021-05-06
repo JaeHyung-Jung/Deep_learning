@@ -568,27 +568,27 @@ for i in range(num_images):
 plt.tight_layout()
 plt.show()
 ```
-#
+   
 Finally, use the trained model to make a prediction about a single image.
 ```Python
 # Grab an image from the test dataset.
 img = test_images[1]
 print(img.shape)
 ```
-#
+   
 Copy and Paste below code.
 ```Python
 # Add the image to a batch where it's the only member.
 img = (np.expand_dims(img,0))
 print(img.shape)
 ```
-#
+   
 Now predict the correct label for this image:
 ```Python
 predictions_single = probability_model.predict(img)
 print(predictions_single)
 ```
-#
+   
 Copy and Paste below code.
 ```Python
 plot_value_array(1, predictions_single[0], test_labels)
@@ -598,6 +598,6 @@ tf.keras.Model.predict returns a list of lists—one list for each image in the 
 ```Python
 np.argmax(predictions_single[0])
 ```
-#
+   
 Well done, tutorials of FashionMNIST is finished.   
 You can raise up the accuracy by editing the model.

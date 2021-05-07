@@ -601,4 +601,9 @@ np.argmax(predictions_single[0])
 ```
    
 Well done, tutorials of FashionMNIST is finished.   
-You can raise up the accuracy by editing the model.
+The goal of this week is to edit this model from FCL(fully-connected layer) into CNN(Convolutional neural network)   
+The way to change FCL into CNN is not so difficult.    
+You have to just change the model with using Convolution layer   
+You can raise up the accuracy by editing the model.   
+  
+Hope you guys succeed in classifying this FashionMNIST datasets with using Convolution 

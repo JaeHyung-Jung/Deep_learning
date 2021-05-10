@@ -606,4 +606,10 @@ The way to change FCL into CNN is not so difficult.
 You have to just change the model with using Convolution layer   
 You can raise up the accuracy by editing the model.   
   
-Hope you guys succeed in classifying this FashionMNIST datasets with using Convolution 
+Hope you guys succeed in classifying this FashionMNIST datasets with using Convolution    
+   
+If you feel so hard to make CNN, Don't worry.   
+I will load the file of based CNN_FashionMNIST model.
+   
+You can edit the file with using of (Data Augmentation, changing elements like [epochs, structure of model, batchsize])
+With the above technologies, the accuracy can be raised up.   

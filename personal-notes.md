@@ -257,4 +257,8 @@ Params :
 * Inception(GoogleNet -> Inception module, inception v1,2,3) : 
 
 
+### Object detection   
+Objecdetection 이란 ? : Classification + Localization
 
+Instance segmentation : 객체별 분류
+Sementic segmentation : 같은 종(class)이면 같이 분류

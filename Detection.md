@@ -4,7 +4,7 @@
 
 #### 1stage_detctor   
    
-### Segmenation   
+### Segmentation   
 
 #### Simentic segmentation   
    

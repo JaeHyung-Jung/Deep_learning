@@ -7,8 +7,10 @@
 ### Segmentation   
 
 #### Semantic segmentation   
-   
-#### 
+: classify objects with the range of class 
+
+#### Instance segmentation   
+: classify objects with the range of object 
 
 ## Faster_RCNN   
 

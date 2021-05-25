@@ -6,7 +6,7 @@
    
 ### Segmentation   
 
-#### Simentic segmentation   
+#### Semantic segmentation   
    
 #### 
 

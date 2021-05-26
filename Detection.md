@@ -38,7 +38,7 @@ Fast RCNN의 구조 :
 4-1. 하나의 브랜치는 softmax를 통과시켜 Classify
 4-2. 나머지 하나의 브랜치는 bounding box regression을 통해 selective search로 찾은 BB의 위치 조정
 
-
+ 
 #### Faster RCNN
 
 
@@ -49,10 +49,15 @@ Fast RCNN의 구조 :
 1stage detector는 classification과 localization을 동시에하는 과정으로 디텍팅한다.   ex : YOLO, SSD, FocalLoss, RefineDet
 
 #### YOLO
+googlenet을 backbone네트워크로 사용하였으며 feature extraction하며 Convlayer * 4, FCL * 2 하여 최종size = 7*7*30
 
+YOLO의 특징 : gried 범위로 image를 각 7*7사이즈로 나누어 각 cell을 gridcell로 한다.   
+region proposal을 사용하여 BB를 추출하는 Faster_RCNN과 다르게 FC를이용하여 바로 BB를 의 조정을 예측 
+
+#### NMS : bounding box들을 비교하여 교집합이 큰 BB만 남겨서 대표적인 BB만 남기는 방식
 
 ### Segmentation   
-
+   
 #### Semantic segmentation   
 : 객체를 클래스별로 분류 (ex : 차는 차종류끼리 분류)
 

@@ -3,7 +3,7 @@ Object detection : Classification + Localization(Bounding Box Regression)이다.
 ## 2stage_detector & 1stage_detector   
 
 #### 2stage_detctor   
-2stagge detctor는 Classification이후 Localizaiton하는 과정으로 디텍팅한다.   ex : RCNN, fastRCNN, fasterRCNN, Resnet, DenseNet]
+2stagge detctor는 Classification이후 Localizaiton하는 과정으로 디텍팅한다.   ex : RCNN, fastRCNN, fasterRCNN, Resnet, DenseNet]   
 Region Proposal : 객체를 인식하여 Bounding box를 그려주는 방식은 기존의 Sliding Window방식이 있었으나 모든 화면을 인식하여 찾는방법이 비효율적이라   
 Selective Search를 통해 객체가 있을만한 지역을 알고리즘으로 찾아 Bounding box를 그려주는 Region Proposal방식을 사용하고 있다.
 
@@ -11,8 +11,8 @@ Selective Search를 통해 객체가 있을만한 지역을 알고리즘으로 �
 1stage detector는 classification과 localization을 동시에하는 과정으로 디텍팅한다.   ex : YOLO, SSD, FocalLoss, RefineDet
 
 ### RCNN Family
-* Region Proposal : 카테고리(클래스)와 무관하게 물체의 영역을 찾는 모듈
-* CNN : 각각의 영역으로부터 고정된크기의 feature vector를 생성(특징추출)
+* Region Proposal : 카테고리(클래스)와 무관하게 물체의 영역을 찾는 모듈   
+* CNN : 각각의 영역으로부터 고정된크기의 feature vector를 생성(특징추출)   
 * classification : 분류를 위한 linear regression 학습모델 SVM
 
 #### SVM : 선형분류와 비선형분류에서 사용될 수 있으며 데이터가 어느 카테고리에 속하는지 판단하는 모델을 생성한다.

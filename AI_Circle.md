@@ -614,7 +614,7 @@ I will load the file of based CNN_FashionMNIST model.
 You can edit the file with using of (Data Augmentation, changing elements like [epochs, structure of model, batchsize])   
 With the above technologies, the accuracy can be raised up.   
 
-#### Change above basic Net into CNN
+### Change above basic Net into CNN
 Normalizing(Fully_Connected_Network)   
 ```Python
 train_images = train_images / 255.0

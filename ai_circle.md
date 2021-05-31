@@ -601,7 +601,7 @@ np.argmax(predictions_single[0])
 ```
    
 Well done, tutorials of FashionMNIST is finished.   
-The goal of this week is to edit this model from FCL(fully-connected layer) into CNN(Convolutional neural network)   
+The goal of this week is to edit this model from FCN(fully-connected network) into CNN(Convolutional neural network)   
 The way to change FCL into CNN is not so difficult.    
 You have to just change the model with using Convolution layer   
 You can raise up the accuracy by editing the model.   
@@ -614,13 +614,15 @@ I will load the file of based CNN_FashionMNIST model.
 You can edit the file with using of (Data Augmentation, changing elements like [epochs, structure of model, batchsize])   
 With the above technologies, the accuracy can be raised up.   
 
-#### Change above basic Net into CNN   
+#### Change above basic Net into CNN
+Normalizing(Fully_Connected_Network)   
 ```Python
 train_images = train_images / 255.0
 test_images = test_images / 255.0
 ```   
 
-Change above code to Below   
+Change above code to Below(FCN->CNN)
+Normalizing(CNN)   
 ```Python
 #Normalizing
 train_images = train_images/255
@@ -630,7 +632,8 @@ test_images = test_images.astype('float32')
 train_images = train_images.reshape(-1,28,28,1)
 test_images = test_images.reshape(-1,28,28,1)
 ```   
-
+   
+Model(Fully_Connected_Network)
 ```Python
 model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),
@@ -639,20 +642,16 @@ model = tf.keras.Sequential([
 ])
 ```   
 
-Change above code to Below
+Change above code to Below(Fully_Connected_Network->Vanilla_CNN)   
+Model(Vanilla_CNN)
 ```Python
 model = tf.keras.Sequential([
   tf.keras.layers.Conv2D(16, 3, padding='same', input_shape=(28,28,1)),
-  tf.keras.layers.ReLU(),
-  tf.keras.layers.MaxPooling2D(),
   tf.keras.layers.Conv2D(64, 3, padding='same'),
-  tf.keras.layers.ReLU(),
-  tf.keras.layers.MaxPooling2D(),
   tf.keras.layers.Conv2D(256, 3, padding='same'),
-  tf.keras.layers.ReLU(),    
-  tf.keras.layers.MaxPooling2D(),
   tf.keras.layers.Flatten(),
-  tf.keras.layers.Dense(128, activation='relu'),
   tf.keras.layers.Dense(10, activation='softmax')
 ])
-```
+```   
+Adding Activation Function(such as ReLU), Dropout, Maxpooling or other things can raises up Accuracy.   
+Good Luck!!   

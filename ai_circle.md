@@ -613,3 +613,46 @@ I will load the file of based CNN_FashionMNIST model.
    
 You can edit the file with using of (Data Augmentation, changing elements like [epochs, structure of model, batchsize])   
 With the above technologies, the accuracy can be raised up.   
+
+#### Change above basic Net into CNN   
+```Python
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+```   
+
+Change above code to Below   
+```Python
+#Normalizing
+train_images = train_images/255
+train_images = train_images.astype('float32')
+test_images = test_images/255
+test_images = test_images.astype('float32')
+train_images = train_images.reshape(-1,28,28,1)
+test_images = test_images.reshape(-1,28,28,1)
+```   
+
+```Python
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(28, 28)),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(10)
+])
+```   
+
+Change above code to Below
+```Python
+model = tf.keras.Sequential([
+  tf.keras.layers.Conv2D(16, 3, padding='same', input_shape=(28,28,1)),
+  tf.keras.layers.ReLU(),
+  tf.keras.layers.MaxPooling2D(),
+  tf.keras.layers.Conv2D(64, 3, padding='same'),
+  tf.keras.layers.ReLU(),
+  tf.keras.layers.MaxPooling2D(),
+  tf.keras.layers.Conv2D(256, 3, padding='same'),
+  tf.keras.layers.ReLU(),    
+  tf.keras.layers.MaxPooling2D(),
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+```

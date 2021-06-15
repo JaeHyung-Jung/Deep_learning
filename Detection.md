@@ -70,4 +70,6 @@ region proposal을 사용하여 BB를 추출하는 Faster_RCNN과 다르게 FC�
 * Object detction in tensorflow_hub : https://tfhub.dev/s?module-type=image-object-detection 
 
 ## Custom Data Training(Detection)   
-https://keyog.tistory.com/22   
+https://keyog.tistory.com/22      
+https://github.com/FurkanOM/tf-faster-rcnn/blob/master/faster_rcnn_trainer.py   => fasterRCNN 커스텀 데이터 Training
+

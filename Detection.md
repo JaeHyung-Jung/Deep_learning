@@ -69,3 +69,5 @@ region proposal을 사용하여 BB를 추출하는 Faster_RCNN과 다르게 FC�
 * MaskRCNN git with Tensorflow : https://github.com/Kanghee-Lee/Mask-RCNN_TF
 * Object detction in tensorflow_hub : https://tfhub.dev/s?module-type=image-object-detection 
 
+## Custom Data Training(Detection)   
+https://keyog.tistory.com/22   

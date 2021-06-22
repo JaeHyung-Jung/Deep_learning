@@ -73,3 +73,4 @@ region proposal을 사용하여 BB를 추출하는 Faster_RCNN과 다르게 FC�
 https://keyog.tistory.com/22      
 https://github.com/FurkanOM/tf-faster-rcnn/blob/master/faster_rcnn_trainer.py   => fasterRCNN 커스텀 데이터 Training
 https://cv.gluon.ai/build/examples_datasets/detection_custom.html => voc, coco custom data 
+https://github.com/jwyang/faster-rcnn.pytorch => voc, coco fasterrcnn github

@@ -74,3 +74,6 @@ https://keyog.tistory.com/22
 https://github.com/FurkanOM/tf-faster-rcnn/blob/master/faster_rcnn_trainer.py   => fasterRCNN 커스텀 데이터 Training   
 https://cv.gluon.ai/build/examples_datasets/detection_custom.html => voc, coco custom data   
 https://github.com/jwyang/faster-rcnn.pytorch => voc, coco fasterrcnn github   
+
+## TP ubuntu 
+https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tensorflow-object-detection-api-installation : TP하던거

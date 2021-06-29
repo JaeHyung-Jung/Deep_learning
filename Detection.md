@@ -78,5 +78,7 @@ https://github.com/jwyang/faster-rcnn.pytorch => voc, coco fasterrcnn github
 ## TP ubuntu 
 https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tensorflow-object-detection-api-installation : TP하던거
 
-
-### TP 6.29 : https://github.com/you359/keras-FasterRCNN
+### TP objectdetection_pytorch
+1. https://github.com/jwyang/faster-rcnn.pytorch
+2. https://github.com/bubbliiiing/faster-rcnn-pytorch
+3. https://github.com/longcw/faster_rcnn_pytorch

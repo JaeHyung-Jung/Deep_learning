@@ -79,8 +79,8 @@ https://github.com/jwyang/faster-rcnn.pytorch => voc, coco fasterrcnn github
 https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tensorflow-object-detection-api-installation : TP하던거
 
 ### TP objectdetection_pytorch
-X 1. https://github.com/jwyang/faster-rcnn.pytorch
-X 2. https://github.com/bubbliiiing/faster-rcnn-pytorch
-3. https://github.com/longcw/faster_rcnn_pytorch
+1. https://github.com/jwyang/faster-rcnn.pytorch  X   
+2. https://github.com/bubbliiiing/faster-rcnn-pytorch  X   
+3. https://github.com/longcw/faster_rcnn_pytorch   
 
 1) https://github.com/roytseng-tw/Detectron.pytorch

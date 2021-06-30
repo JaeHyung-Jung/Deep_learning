@@ -84,3 +84,6 @@ https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/instal
 3. https://github.com/longcw/faster_rcnn_pytorch X  
 
 1) https://github.com/roytseng-tw/Detectron.pytorch
+
+### Object Detection(Faster_RCNN) + Segmentation(Mask_RCNN) // Runnable
+https://github.com/garg-abhinav/FasterRCNN

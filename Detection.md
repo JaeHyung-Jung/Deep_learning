@@ -87,3 +87,13 @@ https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/instal
 
 ### Object Detection(Faster_RCNN) + Segmentation(Mask_RCNN) // Runnable
 https://github.com/garg-abhinav/FasterRCNN
+
+backbone resnet50(not changed from resnet101)   
+        '''
+        elif self.base_model == 'resnet50':
+            pretrained = resnet50(pretrained=True)
+            self.classifier = nn.Sequential(pretrained.layer4)
+             self.classifier.apply(set_bn_fix))
+
+            self.cls_loc = nn.Linear(2048, n_class * 4)
+            self.score = nn.Linear(2048, n_class) '''

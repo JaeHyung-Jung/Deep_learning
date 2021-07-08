@@ -97,3 +97,24 @@ backbone resnet50(not changed from resnet101)
 
             self.cls_loc = nn.Linear(2048, n_class * 4)
             self.score = nn.Linear(2048, n_class) '''
+            
+## backbone
+def get_resnet18_backbone_model(num_classes, pretrained):
+    from torchvision.models.detection.backbone_utils import resnet_fpn_backbone
+
+    print('Using fasterrcnn with res18 backbone...')
+
+    backbone = resnet_fpn_backbone('resnet18', pretrained=pretrained, trainable_layers=5)
+
+    anchor_generator = AnchorGenerator(
+        sizes=((16,), (32,), (64,), (128,), (256,)),
+        aspect_ratios=tuple([(0.25, 0.5, 1.0, 2.0) for _ in range(5)]))
+
+    roi_pooler = torchvision.ops.MultiScaleRoIAlign(featmap_names=['0', '1', '2', '3'],
+                                                    output_size=7, sampling_ratio=2)
+
+    # put the pieces together inside a FasterRCNN model
+    model = FasterRCNN(backbone, num_classes=num_classes,
+                       rpn_anchor_generator=anchor_generator,
+                       box_roi_pool=roi_pooler)
+    return model

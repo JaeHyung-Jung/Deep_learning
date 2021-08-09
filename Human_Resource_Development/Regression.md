@@ -45,7 +45,6 @@ y값이 (0,1)인 이진분류이다.
 
 Binary Classificatino의 대표적인 예로는 y가 [합격인지 불합격]인지, 또는 [참이냐 거짓이냐] 등이 있다.
 
-|BinaryClassification|
 |------|---|
 |x(score)|y(pass)|
 |65|non-pass|

@@ -45,19 +45,14 @@ y값이 (0,1)인 이진분류이다.
 
 Binary Classificatino의 대표적인 예로는 y가 [합격인지 불합격]인지, 또는 [참이냐 거짓이냐] 등이 있다.
 
-|------|---|
-|x(score)|y(pass)|
-|65|non-pass|
-|80|pass|
-|85|pass|
-|55|non-pass|
-|90|pass|
-|60|non-pass|
-|100|pass|   
-(Binary Classification 예시)
-
 |Binary_Classification|Score,Pass|If(score>=80),then pass|
 |------|---|---|
 |x(score)|y(pass)||
 |65|테스트2|테스트3|
 |테스트1|테스트2|테스트3|
+
+|Binary_Classification|Score,Pass|
+|------|---|
+|x(score)|y(pass)|
+|65|테스트2|
+|테스트1|테스트2|

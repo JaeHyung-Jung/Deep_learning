@@ -20,3 +20,13 @@ Machine_Learning의 기법으로 y=Wx+b와같이 독립변수 x에 가중치(W),
 y(땀의 량) = W(가중치)*x(운동량) + b(bias)로 두고 학습을 진행하여 운동량에대한 땀의 배출량을 계산하는 것과같이 기계학습을 할 수 있다.
 
 
+### Linear Regression
+앞서 설명한 y=Wx+b가 일반적인 선형 회귀분석이다.
+
+![image](https://user-images.githubusercontent.com/79160507/128653202-c149f583-db59-4a5e-a29f-155cbe09a028.png)
+선형 회귀분석을 통한 데이터분석은 위의 그림과 같다.
+
+
+
+
+### Logistic Regression

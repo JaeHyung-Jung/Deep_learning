@@ -23,10 +23,15 @@ y(땀의 량) = W(가중치)*x(운동량) + b(bias)로 두고 학습을 진행�
 ### Linear Regression
 앞서 설명한 y=Wx+b가 일반적인 선형 회귀분석이다.
 
-![image](https://user-images.githubusercontent.com/79160507/128653202-c149f583-db59-4a5e-a29f-155cbe09a028.png)
+![image](https://user-images.githubusercontent.com/79160507/128653331-0c4d5eec-61c6-414f-bdb5-6a3b657ac9f2.png)
 선형 회귀분석을 통한 데이터분석은 위의 그림과 같다.
+위의 각 점이 Regression모델을 통해 학습되어서 나온 결과값이고 빨강색 직선이 정답(y=wx+b)이다.
+각 점에대해서 정답(직선)과의 차이를 loss라고하며 loss가 작을수록 학습이 정확하게 잘 됐다는것을 의미한다.
 
+Multi Linear Regression또한 존재하며 이는 독립변수x가 여러가지인 경우이다.
+MLR을 식으로 나타내면 다음과 같다. y= W1x(1) + W2x(2) + W3x(3) +... Wnx(n) +b
 
-
+MLR은 여러요소(Xn)에 의해 y가 결정되는 식이며 
+MLR가 쓰이는 예를들자면 미세먼지의 총량을y라하면 x1(PM2.5) x2(CO) x3(NO2)등의 여러 입자에의해 y가 결정되는 경우이다.
 
 ### Logistic Regression

@@ -57,3 +57,8 @@ Binary Classificatino의 대표적인 예로는 y가 [합격인지 불합격]인
 |45|non-pass|   
 
 Binary_Classification의 예시표
+
+위의 데이터는 x가 80을 기준으로 0,1로나뉘기때문에 하나의 직선형태로 나타낼 수 없다.
+
+
+

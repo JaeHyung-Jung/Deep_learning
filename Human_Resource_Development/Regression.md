@@ -54,5 +54,6 @@ Binary Classificatino의 대표적인 예로는 y가 [합격인지 불합격]인
 |100|pass|
 |85|pass|
 |80|pass|
-|45|non-pass|
-Binary_Classification
+|45|non-pass|   
+
+Binary_Classification의 예시표

@@ -55,3 +55,9 @@ Binary Classificatino의 대표적인 예로는 y가 [합격인지 불합격]인
 |60|non-pass|
 |100|pass|   
 (Binary Classification 예시)
+
+|Binary_Classification|Score,Pass|If(score>=80),then pass|
+|------|---|---|
+|x(score)|y(pass)||
+|65|테스트2|테스트3|
+|테스트1|테스트2|테스트3|
